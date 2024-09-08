@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="./images/billy.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Cannon JS</title>
+</head>
+<body>
+  <div id="gui" class="gui">
+    <button>Add Sphere</button>
+    <button>Add Box</button>
+  </div>
+  <script src="./libs/three.min.js"></script>
+  <script src="./libs/cannon.min.js"></script>
+  <script src="./libs/CannonDebugRenderer.js"></script>
+  <script src="main"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const game = new Game()
+      window.game = game
+    })
+  </script>
+</body>
+</html>
