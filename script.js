@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   generateLabyrinth()
 
-  const block = new THREE.BoxGeometry(1, 0.2, 1)
+  const block = new THREE.BoxGeometry(1, 1, 1)
   const labyrinth = new THREE.Group()
   const material = new THREE.MeshPhongMaterial({ color: '#ff4500', shininess: 10 })
 
