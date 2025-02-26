@@ -40,7 +40,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const block = new THREE.BoxGeometry(1, 1, 1)
   const labyrinth = new THREE.Group()
-  const material = new THREE.MeshPhongMaterial({ color: '#ff4500', shininess: 10 })
+  const labyrinthMaterial = new THREE.MeshPhongMaterial({ color: '#ff4500', shininess: 10 })
+
+  const border = new THREE.Group()
+  const borderMaterial = new THREE.MeshPhongMaterial({
+    color: '#8b0000'
+  })
 
   for (let x = 0; x < 2 * labyrinthWidth + 1; x++) {
     for (let y = 0; y < 2 * labyrinthHeight + 2; y++) {
