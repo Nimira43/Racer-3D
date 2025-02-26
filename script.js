@@ -10,8 +10,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const scene = new THREE.Scene()
   const aspect = window.innerWidth / window.innerHeight
   const camera = new THREE.PerspectiveCamera(80, aspect)
-  // camera.position.set(30, 15, 30)
-  // camera.lookAt(scene.position)
+
+  const plane = new THREE.Mesh(
+    new THREE.BoxGeometry(1000, 0.1, 1000),
+    new THREE.MeshPhongMaterial({
+      color: '#ff4500',
+      shininess: 5
+    })
+  )
+  plane.position.set(0, -0.4, 0)
+  scene.add(plane)
 
   generateLabyrinth()
 
