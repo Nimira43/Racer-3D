@@ -4,11 +4,14 @@ document.addEventListener('DOMContentLoaded', () => {
   renderer.setAnimationLoop(drawFrame)
   document.body.appendChild(renderer.domElement)
 
+  // document.body.addEventListener('keydown', onKeyDown)
+  // document.body.addEventListener('keyup', onKeyUp)
+
   const scene = new THREE.Scene()
   const aspect = window.innerWidth / window.innerHeight
-  const camera = new THREE.PerspectiveCamera(30, aspect)
-  camera.position.set(30, 15, 30)
-  camera.lookAt(scene.position)
+  const camera = new THREE.PerspectiveCamera(80, aspect)
+  // camera.position.set(30, 15, 30)
+  // camera.lookAt(scene.position)
 
   generateLabyrinth()
 
