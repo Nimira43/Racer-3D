@@ -42,11 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const labyrinth = new THREE.Group()
   const labyrinthMaterial = new THREE.MeshPhongMaterial({ color: '#ff4500', shininess: 10 })
 
-  const border = new THREE.Group()
-  const borderMaterial = new THREE.MeshPhongMaterial({
-    color: '#8b0000'
-  })
-
   for (let x = 0; x < 2 * labyrinthWidth + 1; x++) {
     for (let y = 0; y < 2 * labyrinthHeight + 2; y++) {
       if (isWall(x, y)) {
@@ -56,20 +51,19 @@ document.addEventListener('DOMContentLoaded', () => {
         wall.position.set(x, wallHeight / 2 - 0.5, y)
         labyrinth.add(wall)
 
-        if (wallHeight < 0.7) {
-          const hole = wall.clone()
-          hole.scale.set(1, 0.2, 1)
-          hole.position.set(x, 0.5, y)
-          labyrinth.add(hole)
-        }
-
         // if (wallHeight < 0.7) {
-        //   const hole = new THREE.Mesh(block, labyrinthMaterial);
-        //   hole.scale.set(1, 0.2, 1);
-        //   hole.position.set(x, 0.5, y);
-        //   labyrinth.add(hole);
+        //   const hole = wall.clone()
+        //   hole.scale.set(1, 0.2, 1)
+        //   hole.position.set(x, 0.5, y)
+        //   labyrinth.add(hole)
         // }
-        
+
+        if (wallHeight < 0.7) {
+          const hole = new THREE.Mesh(block, labyrinthMaterial);
+          hole.scale.set(1, 0.2, 1);
+          hole.position.set(x, 0.5, y);
+          labyrinth.add(hole);
+        }
       }
     }
   }
