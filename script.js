@@ -21,6 +21,21 @@ document.addEventListener('DOMContentLoaded', () => {
   plane.position.set(0, -0.4, 0)
   scene.add(plane)
 
+  const goal = new THREE.Mesh(
+    new THREE.SphereGeometry(1, 32, 32),
+    new THREE.MeshPhongMaterial({
+      color: '#ffd700',
+      shininess: 100,
+      emissive: '#ffa500'
+    })
+  )
+  goal.position.set(
+    2 * labyrinthWidth - 3,
+    1.5,
+    2 * labyrinthHeight
+  )
+  scene.add(goal)
+
   generateLabyrinth()
 
   const block = new THREE.BoxGeometry(1, 0.2, 1)
