@@ -55,9 +55,23 @@ document.addEventListener('DOMContentLoaded', () => {
         wall.scale.set(1, wallHeight, 1)
         wall.position.set(x, wallHeight / 2 - 0.5,  y)
         labyrinth.add(wall)
+
+        // if (wallHeight < 0.7) {
+        //   let hole = wall.clone()
+        //   hole.scale.set(1, 0.2, 1)
+        //   hole.position.set(x, 0.5, y)
+        //   labyrinth.add(hole)
+        // }
+        if (wallHeight < 0.7) {
+          const hole = new THREE.Mesh(block, labyrinthMaterial);
+          hole.scale.set(1, 0.2, 1);
+          hole.position.set(x, 0.5, y);
+          labyrinth.add(hole);
+        }
       }
     }
   }
+
   scene.add(labyrinth)
 
   const lights = [
