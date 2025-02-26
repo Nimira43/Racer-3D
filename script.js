@@ -51,7 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let y = 0; y < 2 * labyrinthHeight + 2; y++) {
       if (isWall(x, y)) {
         const wall = new THREE.Mesh(block, labyrinthMaterial)
-        wall.position.set(x, 0, y)
+        let wallHeight = 0.4 + 1.2 * Math.random()
+        wall.scale.set(1, wallHeight, 1)
+        wall.position.set(x, wallHeight / 2 - 0.5,  y)
+  
         labyrinth.add(wall)
       }
     }
