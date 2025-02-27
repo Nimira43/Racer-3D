@@ -1,9 +1,9 @@
 const labyrinthHeight = 15
 const labyrinthWidth = 28
-
 const labyrinth = []
 const left = []
 const right = []
+
 let currentX
 let currentY
 
@@ -92,7 +92,9 @@ function generateLabyrinth() {
   while (columnIndex > 1) {
     columnIndex--
     let endIndex = left[columnIndex - 1]
-    if (columnIndex !== endIndex && (columnIndex === right[columnIndex] || Math.random() > 0.5)) {
+    if (columnIndex !== endIndex &&
+      (columnIndex === right[columnIndex] || Math.random() > 0.5)
+    ) {
       right[endIndex] = right[columnIndex]
       left[right[columnIndex]] = endIndex
       right[columnIndex] = columnIndex - 1
