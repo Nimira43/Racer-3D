@@ -90,5 +90,3 @@ document.addEventListener('DOMContentLoaded', () => {
     renderer.render(scene, camera)
   }
 })
-
-
